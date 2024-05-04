@@ -1,0 +1,49 @@
+[
+    {
+        "id": 1,
+        "name": "Expresso",
+        "price": 150,
+        "image": "expresso.png"
+    },
+
+    {
+        "id": 2,
+        "name": "Cappucino",
+        "price": 150,
+        "image": "cappucino.png"
+
+    },
+
+    {
+        "id": 3,
+        "name": "Chocolate",
+        "price": 120,
+        "image": "chocolate.png"
+
+    },
+
+    {
+        "id": 4,
+        "name": "Black Coffee",
+        "price": 100,
+        "image": "blackcoffee.png"
+
+    },
+
+    {
+        "id": 5,
+        "name": "Mathca",
+        "price": 140,
+        "image": "matcha.png"
+
+    },
+    {
+        "id": 6,
+        "name": "Latte",
+        "price": 120,
+        "image": "latte.png"
+
+    }
+    
+]
+

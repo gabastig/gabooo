@@ -1,0 +1,349 @@
+<DOCTYPE.html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.shet.css">
+        <title>COFFEE SHOP</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+    <body class="">
+        <style>
+            /*.listCart {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                column-gap: 20px;
+                row-gap: 20px;
+                margin: 50px;
+            }
+            .cart-items-container {
+                position: fixed;
+                top: 0;
+                left: 100%;
+                width: 350px;
+                background-color: #212529;
+                height: 100vh; 
+                transition: 0.5s;            
+            }
+            
+            .cart-items-container h2{
+                color: #F39C12;
+                font-size: 20;
+                font-weight: 900px;
+                margin: 0;
+                margin-left: 10px;
+                height: 290px;
+                display: flex;
+                align-items: center;
+            }
+            .item {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+            }
+            .item div {
+                background-color: #F39C12;
+                width: 110%;
+                height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                cursor: pointer;
+                margin-right: 100px;
+            }
+            .item div:nth-child(2) {
+                background-color: #000000;
+                color: #fff;
+                
+            }
+            .active .cart-items-container {
+                left: calc(100% - 150px);
+            }
+            .active .cart-items-container {
+                transform: translateX(-200px);
+            }
+
+            .item img{
+                display: grid;
+                grid-template-columns: 70px 150px 50px 1fr;
+                height: 140px;
+                width: 140px;
+                border-radius: 50%;
+                object-fit: cover;
+                gap: 10px;
+                text-align: center;
+                align-items: center;
+            }
+            .quantity span {
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background-color: #eee;
+                color: #555;
+                border-radius: 50%;
+                cursor: pointer;
+            }*/
+
+            /*New add to cart */ 
+            .cartTab{
+                width: 350px;
+                background-color: #212529;
+                color: #eee;
+                position: fixed;
+                inset: 0 -400px 0 auto;
+                display: grid;
+                grid-template-rows: 70px 1fr 70px;
+                transition: transform .5s;
+            }
+    
+            body.showCart .cartTab{
+                transform: translateX(-400px);
+            }
+            .cartTab h1{
+                padding: 20px;
+                margin: 0;
+                font-weight: 300;
+                color: #F39C12;
+                margin-top: 120px;   
+                margin-bottom: 100px;
+             
+                
+            }
+            .cartTab .button {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .cartTab .button button {
+                background-color: #F39C12;
+                border: none;
+                font-family: Poppins;
+                font-weight: 500;
+                cursor: pointer;
+            }
+            .cartTab .button .close {
+                background-color: #000000;
+                color: #fff;
+            }
+            .item img{
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-left: 20px;
+            }
+            .item {
+                display: grid;
+                grid-template-columns: 70px 120px 20px 1fr;
+                gap: 10px;
+                text-align: center;
+                align-items: center;
+                margin-top: 100px;
+
+            }
+            .quantity span {
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background-color: #F39C12;
+                color: #212529;
+                border-radius: 50%;
+                cursor: pointer;
+                font-weight: 800;
+            }
+            .quantity span:nth-child(2) {
+                background-color: transparent;
+                color: #eee;
+            }
+            .listCart .item:nth-child(even) {
+                background-color: #eee1;
+            }
+            .listCart{
+                overflow: auto;
+            }
+            .listCart::-webkit-scrollbar{
+                width: 0;
+            }
+            .fa-shopping-cart span {
+                background: red;
+                cursor: pointer;
+                border-radius: 30px;
+                font-size: 12px;
+                height: 25px;
+                width: 25px;
+                line-height: 25px;
+                top: 100px;
+                color: #fff
+            }
+        </style>
+
+        <!--This is the header-->
+        <header class="header">
+            <a href="coffee.html" class="logo">
+                <img src="logo.png" alt="">
+            </a>
+            <nav class="navibar">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#menu">Menu</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <!--Icon div-->
+            <div class="icons">
+                
+                <div class="fas fa-search" id="search-btn"></div>
+                
+                <div class="fas fa-shopping-cart" id="cart-btn">
+                    <span>0</span>
+                </div>
+                <div class="fas fa-bars" id="menu-btn"></div>
+            </div>
+            <!--search icons-->
+            <div class="search-form">
+                <input type="search" id="search-box" placeholder="search your order now...">
+                <label for="search-box" class="fas fa-search"></label>
+            </div>
+        </header>            
+        <!-- End of header -->
+
+        <!--Start of Section (HOME) tags-->
+        <section class="home" id="home">
+            <div class="content">
+                <h2>START YOUR DAY WITH COFFEE</h2>
+                <p>Every delightful sip is an invitation to savor the moment, 
+                where the simple pleasure of coffee becomes an unforgettable experience. </p>
+                <a href="#menu" class="btn">Order now</a>
+            </div>
+        </section>
+        <!--Ends here-->
+
+        <!--Another Section (ABOUT US) tags-->
+        <section class="about" id="about">
+            <h1 class="heading"><span>About</span> Us</h1>
+            <div class="row">
+                <div class="image">
+                    <img src="sectionimage.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Our Origins</h3>
+                    <p>In JustSip, our passion for crafting exceptional coffee experiences drives us to carefully 
+                    select the finest beans and artfully roast them to perfection. Inspired by the pursuit of both quality and tranquility, 
+                    we strive to create a haven where patrons can unwind, connect, and savor each moment, 
+                    making JustSip more than a coffee shop  it's a destination for relaxation, community, and the pure joy of a perfect sip.
+                    delight, one sip at a time. Welcome to JustSip, where coffee becomes an exquisite ritual and every visit unfolds into a cherished memory.
+                    </p>
+                <a href="#" class="btn">learn more</a>
+                </div>
+            </div>
+        </section>
+        <!--Ends here-->
+
+        <!-- (MENU) SECTION starts here-->
+        <section class="menu" id="menu">
+            <h1 class="heading">Our <span>Menu</span></h1>
+            <p>It takes a lot of heart and hard work at every step to create the best 
+                coffee possible, and we know it takes a lot to grit to keep your own grind going.
+            </p>
+            <div class="listProducts">
+                <!---->
+                <div class="box">
+                    <img src="expresso.png" alt="">
+                    <h3>Expresso</h3>
+                    <div class="price">₱150 <button class="add">Add to Cart</button>
+                    </div> 
+                </div>
+
+                <div class="box">
+                    <img src="cappucino.png" alt="">
+                    <h3>Cappucino</h3>
+                    <div class="price">₱150<button class="add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="chocolate.jpg" alt="">
+                    <h3>Chocolate</h3>
+                    <div class="price">₱120<button class="add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="blackcoffee.png" alt="">
+                    <h3>Black Coffee</h3>
+                    <div class="price">₱100<button class="add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="matcha.png" alt="">
+                    <h3>Matcha</h3>
+                    <div class="price">₱140<button class="add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="latte.png" alt="">
+                    <h3>Latte</h3>
+                    <div class="price">₱140<button class="add">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--SECTION MENU ENDS HERE-->
+
+        <!--ADD TO CART LIST -->
+                    <div class="cartTab">
+                        <h1></h1>
+                        <div class="listCart">
+                           
+                        </div>
+                        <div class="button">
+                            <button class="total">Checkout</button>
+                            <button class="close">Close</button>
+                        </div>
+                    </div>
+
+        <!--ADD TO CART LIST ENDS -->
+
+        <!--FOOTER SECTION STARTS HERE-->
+       
+        <section class="contact" id="contact">
+            <h1 class="heading">Contact</h1>
+            <p> Have a question or feedback? Reach out to us through our 'Contact' 
+                page for prompt assistance and inquiries regarding our coffee and services.</p>
+                <div class="footer-container">
+                <div class="footer-box">
+                    <a href="" class="logo">JustSip</a>
+                    <div class="social">
+                        <a href="https://www.facebook.com/mitz2003"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/mitz2003"><i class="fa-brands fa-facebook-messenger"></i></a>
+                        <a href="justsip0704@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h2>E-mail</h2>
+                    <h3>justsip0704@gmail.com</h3>
+                    <h3>mitz.bere@gmil.com</h3>
+                </div>
+
+                <div class="footer-box">
+                    <h2>Call us</h2>
+                    <h3>+63-9946-324-981</h3>
+                    <h3>+63-9062-114-308</h3>
+                </div>
+
+                <div class="footer-box">
+                    <h2>Contents</h2>
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#menu">Menu</a>
+                </div>
+            </div>
+        </section>
+        <p class="copyright">&#169; JustSip</p>
+        <!--Link to JS-->
+        <script src="script.js"></script>
+    </body>
+</html>    
