@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Expresso",
         "price": 150,
-        "image": "expresso.png"
+        "image": 'expresso.png'
     },
 
     {
