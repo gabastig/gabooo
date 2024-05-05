@@ -86,7 +86,7 @@ const addDataToHTML = () => {
             newProduct.classList.add('box');
             newProduct.dataset.id = product.id;
             newProduct.innerHTML = `
-            <img src=${product.image}" alt="">
+            <img src=${product.image} alt="">
                     <h3>${product.name}</h3>
                     <div class="price">₱${product.price}</div> 
                     <button class="add">Add to Cart</button>
